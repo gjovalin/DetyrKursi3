@@ -1,21 +1,16 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-
 import java.sql.Statement;
-
-
-
 import javax.swing.*;
 
-//Projekt 1_2 ne Java 2
+//Projekt 3 ne Java 2
 //Informatike viti III
-//Data e marrjes së projektit : 3.12.2019
-//Data e dorëzimit të projektit : 15.12.2019
-//Ky program ben te mundur leximin nga nje skedar text, afishimin,shtimin e rreshtave nga perdoruesi
+//Data e marrjes së projektit : 8.1.2020
+//Data e dorëzimit të projektit : 18.11.2020
+//Ky program ben te mundur leximin nga nje databaze, afishimin,shtimin e rreshtave nga perdoruesi
 //me ane te menyse perzgjedhese.
 //Punuan Gjovalin Deda,Eljona Arrinaj,Klevisa Zekaj, Gledis Kapidani
 
@@ -35,7 +30,7 @@ public class TextAreaLoad extends JFrame implements ActionListener
         final JTextArea edit = new JTextArea(25, 40);
        
 
-        //lexon te dhenat e skedarit dhe i afishon ne textarea
+        //lexon te dhenat e databazes dhe i afishon ne textarea
         JButton read = new JButton("Lexo databazen");
         read.addActionListener( new ActionListener()
         {
@@ -115,6 +110,7 @@ public class TextAreaLoad extends JFrame implements ActionListener
                         edit.append(mbiemri);
                         edit.append("\t");
                         edit.append(a1);
+                        edit.append("\t");
                         edit.append(b1);
                         edit.append("\t");
                         edit.append(rryma);
@@ -137,7 +133,7 @@ public class TextAreaLoad extends JFrame implements ActionListener
         	     
         		});
         
-        // Shton rresht me vlerat perkatese ne skedar
+        // Shton rresht me vlerat perkatese ne databaze
         
         JButton write = new JButton("Shto ne Skedar");
         write.addActionListener( new ActionListener()
@@ -168,13 +164,13 @@ public class TextAreaLoad extends JFrame implements ActionListener
         		 	 Class.forName("com.mysql.cj.jdbc.Driver");
                      connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/muzikant", "root", "");
                      statement = connection.createStatement();
-                     String str = "INSERT INTO muzikantet VALUES ("+id+", N'"+emri+"', N'"+mbiemri+"', "+ditlindja+", "+v_vdekjes+", N'"+rr_muzikore+"', N'"+vendlindja+"')";
+                     String str = "INSERT INTO muzikantet VALUES ("+id+", '"+emri+"', '"+mbiemri+"', "+ditlindja+", "+v_vdekjes+", '"+rr_muzikore+"', '"+vendlindja+"')";
                      statement.executeUpdate(str);
                      JOptionPane.showMessageDialog(null, "shtimi me sukses ");
 
                      connection.close();
         	}
-        	 catch (Exception ex) {//JOptionPane.showMessageDialog(read, "E pamundur te shtohet");} 
+        	 catch (Exception ex) {
         		 JOptionPane.showMessageDialog(read,ex);
         	 }
         	 }

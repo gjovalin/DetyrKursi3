@@ -2,8 +2,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,11 +9,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-//Projekt 2_2 ne Java 2
+//Projekt 3 ne Java 2
 //Informatike viti III
-//Data e marrjes së projektit : 3.12.2019
-//Data e dorëzimit të projektit : 15.12.2019
-//Ky program ben te mundur leximin nga nje skedar text, afishimin,shtimin e rreshtave nga perdoruesi
+//Data e marrjes së projektit : 8.1.2020
+//Data e dorëzimit të projektit : 18.11.2020
+//Ky program ben te mundur leximin nga nje databaze, afishimin,shtimin e rreshtave nga perdoruesi
 //me ane te menyse perzgjedhese.
 //Punuan Gjovalin Deda,Eljona Arrinaj,Klevisa Zekaj, Gledis Kapidani
 

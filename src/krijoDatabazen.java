@@ -1,10 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-import javax.swing.JOptionPane;
 
 public class krijoDatabazen {
 
@@ -46,14 +43,24 @@ public class krijoDatabazen {
 			
 			Connection connection = null;
 		    Statement statement = null;
-		   // ResultSet resultSet = null;
+		   
 			
 			try {
 				
 				 Class.forName("com.mysql.cj.jdbc.Driver");
                  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/muzikant", "root", "");
                  statement = connection.createStatement();
-                 statement.executeUpdate("INSERT INTO muzikantet VALUES (7, 'Fred', 'Blogs', 1948, 0, 'jazz', 'Manchester');");
+                 statement.executeUpdate("INSERT INTO muzikantet VALUES"
+                 		+ " (1, 'Fred', 'Blogs', 1948, 0, 'jazz', 'Manchester'),"
+                 		+ "(2, 'John', 'Smith', 1950, 0, 'classical', 'Salzburg'),"
+                 		+ "(3, 'Helen', 'Smyth', 1948, 0, 'rock', 'New York'),"
+                 		+ "(4, 'Harriest', 'Smyth', 1909, 1980, 'classical', 'Glasgow'),"
+                 		+ "(5, 'James', 'First', 1965, 0, 'rock', 'London'),"
+                 		+ "(6, 'Theo', 'Mengel', 1948, 0, 'classical', 'Chicago'),"
+                 		+ "(7, 'Sue', 'Litle', 1945, 0, 'pop', 'Manchester'),"
+                 		+ "(8, 'Harry', 'Forte', 1951, 0, 'pop', 'Salzburg'),"
+                 		+ "(9, 'Alan', 'Fluff', 1935, 1997, 'jazz', 'London'),"
+                 		+ "(10, 'James', 'Steeple', 1947, 0, 'rock', 'Birmingham');");
      			connection.close();	
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -66,12 +73,6 @@ public class krijoDatabazen {
 		
 		public static void main (String[] args) throws SQLException {
 			
-			
-			
-			krijoDatabazen.mbushTeDhena();
-			krijoDatabazen.krijoTabelen();
-		
-		/*public krijoDatabazen () throws SQLException{
 			
 				Connection conn = null;
 				Statement stmt = null;
@@ -111,13 +112,14 @@ public class krijoDatabazen {
 						 }
 						 System.out.println("Dalje....");	
 						 
-						 //thirrje metodes
-						// krijoTabelen() ;
+						 
+						krijoTabelen() ;
+						mbushTeDhena();
 						
-			*/
+			
 		
-		
+		}
 		}
 
 
-		}
+		
